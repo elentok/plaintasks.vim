@@ -10,7 +10,9 @@ endif
 hi def link ptTask Function
 hi def link ptCompleteTask Comment
 hi def link ptSection Statement
+hi def link ptContext Question
 
 syn match ptSection "^.*: *$"
-syn match ptTask "^ *☐.*"
-syn match ptCompleteTask "^ *✔.*"
+syn match ptTask "^ *☐.*" contains=ptContext
+syn match ptCompleteTask "^ *✔.*" contains=ptContext
+syn match ptContext "@[^ ]*"

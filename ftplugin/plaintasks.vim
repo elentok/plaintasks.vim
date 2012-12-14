@@ -7,8 +7,11 @@ if exists("b:did_ftplugin")
   finish
 endif
 
-map \tn _i☐ <esc>
-map \tt :call ToggleComplete()<cr>
+nmap <buffer> + :call NewTask()<cr>A
+nmap = :call ToggleComplete()<cr>
+
+" when pressing enter within a task it creates another task
+setlocal comments+=n:☐
 
 function! ToggleComplete()
   let line = getline('.')
@@ -21,4 +24,13 @@ function! ToggleComplete()
     exec "normal A" . text
     normal _
   endif
+endfunc
+
+function! NewTask()
+  let line=getline('.')
+  if line =~ "^ *$"
+    normal A☐ 
+  else
+    normal I☐ 
+  end
 endfunc

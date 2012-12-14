@@ -14,7 +14,7 @@ Keyboard Shortcuts
 ------------------
 
 ```
-\tn - create new task
-\tt - toggle complete
++ - create new task
+= - toggle complete
 
 ```
