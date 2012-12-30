@@ -7,8 +7,8 @@ if exists("b:did_ftplugin")
   finish
 endif
 
-nmap <buffer> + :call NewTask()<cr>A
-nmap = :call ToggleComplete()<cr>
+nnoremap <buffer> + :call NewTask()<cr>A
+nnoremap <buffer> = :call ToggleComplete()<cr>
 
 " when pressing enter within a task it creates another task
 setlocal comments+=n:☐
