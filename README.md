@@ -16,5 +16,6 @@ Keyboard Shortcuts
 ```
 + - create new task
 = - toggle complete
+- - archive tasks
 
 ```
