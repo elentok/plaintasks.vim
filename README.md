@@ -18,6 +18,6 @@ Keyboard Shortcuts
 = - toggle complete
 <C-M> - toggle cancel
 - - archive tasks
---<Tab> - insert a separator line
+--<space> - insert a separator line
 
 ```

@@ -1,4 +1,4 @@
-" Vim filetype plugin
+"Vim filetype plugin
 " Language: PlainTasks
 " Maintainer: David Elentok
 " ArchiveTasks() added by Nik van der Ploeg
@@ -12,7 +12,7 @@ nnoremap <buffer> + :call NewTask()<cr>A
 nnoremap <buffer> = :call ToggleComplete()<cr>
 nnoremap <buffer> <C-M> :call ToggleCancel()<cr>
 nnoremap <buffer> - :call ArchiveTasks()<cr>
-inoremap --<Tab> <Esc>:call Separator()<cr>A
+abbr -- <c-r>=Separator()<cr>
 
 " when pressing enter within a task it creates another task
 setlocal comments+=n:☐
@@ -91,8 +91,8 @@ endfunc
 function! Separator()
     let line = getline('.')
     if line =~ "^-*$"
-        normal A--- ✄ -----------------------
+      return "--- ✄ -----------------------"
     else
-        normal A--  
+      return "--"
     end
 endfunc
