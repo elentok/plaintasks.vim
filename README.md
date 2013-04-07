@@ -16,6 +16,8 @@ Keyboard Shortcuts
 ```
 + - create new task
 = - toggle complete
+<C-M> - toggle cancel
 - - archive tasks
+--<Tab> - insert a separator line
 
 ```
