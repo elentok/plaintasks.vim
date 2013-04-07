@@ -10,7 +10,9 @@ endif
 
 nnoremap <buffer> + :call NewTask()<cr>A
 nnoremap <buffer> = :call ToggleComplete()<cr>
+nnoremap <buffer> <C-M> :call ToggleCancel()<cr>
 nnoremap <buffer> - :call ArchiveTasks()<cr>
+inoremap --<Tab> <Esc>:call Separator()<cr>A
 
 " when pressing enter within a task it creates another task
 setlocal comments+=n:☐
@@ -20,9 +22,22 @@ function! ToggleComplete()
   if line =~ "^ *✔"
     s/^\( *\)✔/\1☐/
     s/ *@done.*$//
-  else
+  elseif line =~ "^ *☐"
     s/^\( *\)☐/\1✔/
     let text = " @done (" . strftime("%Y-%m-%d %H:%M") .")"
+    exec "normal A" . text
+    normal _
+  endif
+endfunc
+
+function! ToggleCancel()
+  let line = getline('.')
+  if line =~ "^ *✘"
+    s/^\( *\)✘/\1☐/
+    s/ *@cancelled.*$//
+  elseif line =~ "^ *☐"
+    s/^\( *\)☐/\1✘/
+    let text = " @cancelled (" . strftime("%Y-%m-%d %H:%M") .")"
     exec "normal A" . text
     normal _
   endif
@@ -71,4 +86,13 @@ function! ArchiveTasks()
     "clean up
     let @a = a_reg
     call cursor(orig_line, orig_col)
+endfunc
+
+function! Separator()
+    let line = getline('.')
+    if line =~ "^-*$"
+        normal A--- ✄ -----------------------
+    else
+        normal A--  
+    end
 endfunc
