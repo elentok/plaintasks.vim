@@ -20,7 +20,7 @@ function! ToggleComplete()
   if line =~ "^ *✔"
     s/^\( *\)✔/\1☐/
     s/ *@done.*$//
-  else
+  elseif line =~ "^ *☐"
     s/^\( *\)☐/\1✔/
     let text = " @done (" . strftime("%Y-%m-%d %H:%M") .")"
     exec "normal A" . text
