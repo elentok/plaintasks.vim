@@ -9,8 +9,9 @@ if exists("b:did_ftplugin")
 endif
 
 nnoremap <buffer> + :call NewTask()<cr>A
-nnoremap <buffer> = :call ToggleComplete()<cr>
-nnoremap <buffer> <C-M> :call ToggleCancel()<cr>
+vnoremap <buffer> + :call NewTask()<cr>
+noremap <buffer> = :call ToggleComplete()<cr>
+noremap <buffer> <C-M> :call ToggleCancel()<cr>
 nnoremap <buffer> - :call ArchiveTasks()<cr>
 abbr -- <c-r>=Separator()<cr>
 
