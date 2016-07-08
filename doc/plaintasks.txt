@@ -23,7 +23,7 @@ or just name them |TODO| with no extension.
 ==============================================================================
 MAPPINGS                                                   *plaintasks-mappings*
 
-  *Normal-mode*
+  *Normal-mode/Visual-mode*
       |+|         Create new task
       |=|         Toggle complete
       |<C-M>|     Toggle cancel

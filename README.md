@@ -13,7 +13,7 @@ Bundle 'elentok/plaintasks.vim'
 Keyboard Shortcuts
 ------------------
 
-**Normal-mode**
+**Normal-mode / Visual-mode**
 ```
 + - create new task
 = - toggle complete
