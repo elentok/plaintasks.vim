@@ -8,11 +8,11 @@ if exists("b:did_ftplugin")
   finish
 endif
 
-nnoremap <buffer> + :call NewTask()<cr>A
-vnoremap <buffer> + :call NewTask()<cr>
-noremap <buffer> = :call ToggleComplete()<cr>
-noremap <buffer> <C-M> :call ToggleCancel()<cr>
-nnoremap <buffer> - :call ArchiveTasks()<cr>
+nnoremap <silent> <buffer> + :call NewTask()<cr>A
+vnoremap <silent> <buffer> + :call NewTask()<cr>
+noremap <silent> <buffer> = :call ToggleComplete()<cr>
+noremap <silent> <buffer> <C-M> :call ToggleCancel()<cr>
+nnoremap <silent> <buffer> - :call ArchiveTasks()<cr>
 abbr -- <c-r>=Separator()<cr>
 
 " when pressing enter within a task it creates another task
